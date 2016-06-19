@@ -1,0 +1,18 @@
+.li {
+  padding: 10px;
+  background: #FFF;
+  border-bottom: 1px solid #EEE;
+}
+
+.li:nth-child(2n) {
+  background: #EEF6FF;
+}
+
+.li:last-child {
+  border-bottom: none;
+}
+
+.button {
+  margin: 0 10px 0 0;
+  opacity: 0.5;
+}

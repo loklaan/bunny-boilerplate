@@ -1,0 +1,38 @@
+.container {
+  margin: 5px auto;
+  max-width: 400px;
+  background: #FAFAFA;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 3px 9px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.form {
+  background: #EEE;
+  padding: 10px;
+  border-bottom: 1px solid #DDD;
+}
+
+.input {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  background: #FFF;
+  border: 1px solid #DDD;
+  border-radius: 5px;
+  font-size: 130%;
+  outline: none;
+}
+
+.input:focus {
+  border-color: #BBB;
+}
+
+.ul {
+  min-height: 100px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

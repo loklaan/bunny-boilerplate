@@ -1,12 +1,79 @@
-# Bunny Boilerplate <small>Webpack, Redux, React &amp; friends</small>
+# ![arctichare][hareimg]
 
-Boilerplate for getting frontend projects up off the ground, with my preferred tools & file structure.
+_**Super Quick Boilerplate for Webpack, React & friends.**_
 
-Example is a classic todo app: [http://bunny-boilerplate.surge.sh/][5]
+> 
+Avoid configuration.  
+Use common packages.  
+Have lovely developer experience.
+
+Get your projects up _super quickly_ with this boilerplate  for Webpack, React & friends..
+
+**Why? :rabbit:**
+
+Bootstrapping frontend projects is time consuming, and providing consistent developer experience is hard.
+
+The solution is simple... Take choices away. Reduce cogtitive overload. Delay fatigue.
+
+In this boilerplate, you aren't given any immediate choices to make. Just run `npm start` and write code. Wow, quick.
 
 ## Details
 
-### Structure
+### Included Packages
+
+* react
+* react-dom
+* redux
+* react-redux
+* flux-standard-action
+* core-decorators
+* lodash
+
+### Tooling
+
+* babel
+* webpack
+* standard
+* css-modules
+
+### Particulars
+
+#### Webpack
+
+Configured almost entirely with `hjs-webpack`. Includes:
+
+* hot module replacement
+* css modules
+* import aliases for src directories
+* bundle size visualiser (see [Build](#build))
+* see [hjs-webpack][hjs] for details
+
+##### Aliases
+
+Module aliases have been setup for `lib`, `models`, `components`, `styles`.
+
+```javascript
+// Example. Always resolves to 'src/models/todos.js'.
+import todos from 'models/todos'
+```
+
+#### Linting
+ESLint is using [standardjs][standard], with react plugin.
+
+#### Babel
+Babel is using `es2015` and `stage-0` presets, as well `transform-decorators-legacy` and `react-hmre` plugins.
+
+#### Redux
+The files in `src/models` adhere to [ducks][ducks]. If you're going to use redux selectors, it is also good to define them in the models.
+
+Enabled middlewares:
+* `redux-thunk`
+* require flux standard actions (see `redux-utils.js`)
+* add your own in `store.js`
+
+Redux DevTools [extension][devtools] is supported. 
+
+### Project Structure
 
 ```shell
 bunny-boilerplate
@@ -16,45 +83,19 @@ bunny-boilerplate
 	├── models/             # redux ducks
 	├── components/         # all components
 	├── styles/             # shared css
-	└── bootstrap.js        # mount app container
-	└── store.js            # configure redux store
+	└── bootstrap.js        # app container
+	└── store.js            # redux store
 ```
-
-### Tools
-
-* babel
-* webpack
-* eslint
-* css modules
-
-### Packages
-
-* react
-* redux
-* lodash
-* core-decorators
-
-### Particulars
-
-* webpack configured almost entirely with [hjs-webpack][3]
-  * hot module replacement
-  * css modules for all css loading
-  * module aliases for all main src directories
-* eslint is using [standardjs][1] (with react/jsx)
-* files in `models` follow [ducks][2]
-* redux middleware:
-  * redux-thunk
-  * require flux standard action (see `redux-utils` file)
 
 ## Build
 
-**Development Server**
-
-> _Note: Visit [http://localhost:3000/stats.html][4] for webpack bundle statistics._
+**Development**
 
 ```shell
 PORT=3000 npm start
 ```
+
+> _Note: Visit [localhost:3000/stats][webpackstats] for webpack bundle statistics._
 
 **Run 'Tests'**
 
@@ -68,21 +109,42 @@ npm run test
 npm run build
 ```
 
+### Deploy
+
+Deploying with [surge.sh][surge] is quick and easy.
+
+See _[bunny-boilerplate.surge.sh][demo]_ for the demo.
+
+```shell
+npm install -g surge
+
+npm run build && \
+surge --project ./public
+```
+
 ## Changelog
 
-- 1.0.0 - initial release
+- v1.0.0 - initial release
 
-### Special Thanks <3
+### Special Thanks
 
 Thanks to the army of people that made the tools and packages. <3
 
 ## License
 
-Copyright, or something (c) 2016 Lochlan Bunn  
-Licensed under the MIT license.
+Licensed under the MIT license, (c) 2016 Lochlan Bunn.
 
-[1]: http://standardjs.com/
-[2]: https://github.com/erikras/ducks-modular-redux
-[3]: https://github.com/HenrikJoreteg/hjs-webpack
-[4]: http://localhost:3000/stats.html
-[5]: http://bunny-boilerplate.surge.sh/
+--
+
+_Bunny is agile and majestic._
+
+
+
+[hareimg]: https://cdn.rawgit.com/loklaan/bd7ae7b672971689fe58f80890329338/raw/cb8833029d5c7fd9b400683bdcaa156161b43c93/arctichare.png
+[standard]: http://standardjs.com/
+[ducks]: https://github.com/erikras/ducks-modular-redux
+[hjs]: https://github.com/HenrikJoreteg/hjs-webpack
+[webpackstats]: http://localhost:3000/stats.html
+[demo]: https://bunny-boilerplate.surge.sh/
+[surge]: https://surge.sh/
+[devtools]: https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd

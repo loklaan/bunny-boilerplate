@@ -13,7 +13,7 @@ Get your projects up _super quickly_ with this boilerplate  for Webpack, React &
 
 Bootstrapping frontend projects is time consuming, and providing consistent developer experience is hard.
 
-The solution is simple... Take choices away. Reduce cogtitive overload. Delay fatigue.
+The solution is simple... Take choices away. Reduce cognitive overload. Delay fatigue.
 
 In this boilerplate, you aren't given any immediate choices to make. Just run `npm start` and write code. Wow, quick.
 

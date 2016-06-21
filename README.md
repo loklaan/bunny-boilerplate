@@ -1,3 +1,5 @@
+![badge](https://img.shields.io/badge/quality-experimental-lightgrey.svg?logoWidth=200)
+
 # ![arctichare][hareimg]
 
 _**Super Quick Boilerplate for Webpack, React & friends.**_

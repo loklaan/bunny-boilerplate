@@ -28,8 +28,6 @@ In this boilerplate, you aren't given any immediate choices to make. Just run `n
 * redux
 * react-redux
 * flux-standard-action
-* core-decorators
-* lodash
 
 ### Tooling
 

@@ -1,5 +1,4 @@
 // https://github.com/HenrikJoreteg/hjs-webpack
-var _ = require('lodash')
 var getConfig = require('hjs-webpack')
 var webpackConfig = getConfig({
   in: 'src/bootstrap.js',
@@ -25,12 +24,11 @@ webpackConfig.module.loaders.forEach(replaceLoader(cssModuleMatch, `$1$2${cssMod
 /*
 Quick import aliases. Explicit-ish because it helps jetbrains perform import autocompletion.
 */
-webpackConfig.resolve = webpackConfig.resolve || {}
-webpackConfig.resolve.alias = _.defaults(webpackConfig.resolve.alias || {}, {
+webpackConfig.resolve.alias = {
   styles: `${__dirname}/src/styles`,
   components: `${__dirname}/src/components`,
   models: `${__dirname}/src/models`,
   lib: `${__dirname}/src/lib`
-})
+}
 
 module.exports = webpackConfig

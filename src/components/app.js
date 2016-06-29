@@ -1,8 +1,6 @@
 import React, { Component, PropTypes } from 'react'
-import _ from 'lodash'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { autobind } from 'core-decorators'
 import { addTodo, removeTodo } from 'models/todos'
 import TodoItem from 'components/todo-item'
 import s from './app.css'
@@ -11,7 +9,6 @@ const mapProps = (state) => ({todos: state.todos})
 const mapActions = (dispatch) => bindActionCreators({ addTodo, removeTodo }, dispatch)
 
 @connect(mapProps, mapActions)
-@autobind
 export default class App extends Component {
   static propTypes = {
     addTodo: PropTypes.func.isRequired,
@@ -23,7 +20,7 @@ export default class App extends Component {
 
   addTodos () {
     const { text } = this.state
-    if (_.isEmpty(text)) return
+    if (!text) return
     this.setState({ text: '' })
     this.props.addTodo(text)
     return false
@@ -43,12 +40,12 @@ export default class App extends Component {
 
     return (
       <div className={`${s.container}`}>
-        <form className={`${s.form}`} onSubmit={this.addTodos} action='javascript:'>
+        <form className={`${s.form}`} onSubmit={() => this.addTodos()} action='javascript:'>
           <input className={`${s.input}`} value={text} onInput={({target}) => this.handleTextChange(target.value)} placeholder='New Todos...' />
         </form>
         <ul className={`${s.ul}`}>
           {todos.map(todo => (
-            <TodoItem key={todo.id} todo={todo} onRemove={this.removeTodo} />
+            <TodoItem key={todo.id} todo={todo} onRemove={(todo) => this.removeTodo(todo)} />
           ))}
         </ul>
       </div>

@@ -126,6 +126,10 @@ surge --project ./public
 
 - v1.0.0 - initial release
 
+## Related Projects
+
+- [mxstbr/react-boilerplate][react-boilerplate] _demands a look_
+
 ### Special Thanks
 
 Thanks to the army of people that made the tools and packages. <3
@@ -148,3 +152,4 @@ _Bunny is agile and majestic._
 [demo]: https://bunny-boilerplate.surge.sh/
 [surge]: https://surge.sh/
 [devtools]: https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd
+[react-boilerplate]: https://github.com/mxstbr/react-boilerplate

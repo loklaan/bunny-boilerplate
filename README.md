@@ -1,4 +1,9 @@
-![badge](https://img.shields.io/badge/quality-experimental-lightgrey.svg?logoWidth=200)
+![badge](https://img.shields.io/badge/quality-abandoned-lightred.svg?logoWidth=200)
+
+**Abandoned** :no_entry_sign::no_entry_sign::no_entry_sign::no_entry_sign:  
+This boilerplate has been abandoned in favour of tools like [`create-react-app`][createreactapp] and [`nwb`][nwb].
+
+One day this project might be reborn as a wrapper for tools like the two above.
 
 # ![arctichare][hareimg]
 
@@ -153,3 +158,5 @@ _Bunny is agile and majestic._
 [surge]: https://surge.sh/
 [devtools]: https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd
 [react-boilerplate]: https://github.com/mxstbr/react-boilerplate
+[createreactapp]: https://github.com/facebookincubator/create-react-app
+[nwb]: https://github.com/insin/nwb

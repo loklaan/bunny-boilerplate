@@ -7,6 +7,8 @@ One day this project might be reborn as a wrapper for tools like the two above.
 
 # ![arctichare][hareimg]
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/loklaan/bunny-boilerplate.svg)](https://greenkeeper.io/)
+
 _**Super Quick Boilerplate for Webpack, React & friends.**_
 
 > 
